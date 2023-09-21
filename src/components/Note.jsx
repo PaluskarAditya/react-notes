@@ -1,5 +1,4 @@
 import React from 'react'
-import EditNote from './EditNote'
 
 export default function Note({ toggle, edit, del, setCurr, save, el, curr }) {
   return (
