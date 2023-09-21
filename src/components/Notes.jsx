@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Note from './Note'
 
 export default function Notes({ notes, edit, save, toggle, del, curr, setCurr }) {
