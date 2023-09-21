@@ -4,7 +4,7 @@ import Notes from './components/Notes';
 import AddNote from './components/AddNote';
 
 function App() {
-  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('notes')))
+  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('notes')) ? JSON.parse(localStorage.getItem('notes')) : [])
 
   const [curr, setCurr] = useState({ id: "", text: "", completed: "" })
 
@@ -17,7 +17,7 @@ function App() {
         text,
         completed: false
       }
-      setNotes([...notes, newNote])
+      setNotes((prev) => [...prev, newNote])
       setText('')
     } else {
       alert('Note cannot be empty...')
