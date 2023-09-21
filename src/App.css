@@ -1,38 +1,158 @@
+:root {
+  --blue: rgb(0, 98, 255);
+  --border: 1px solid #d3d3d3;
+  --radius: 5px;
+  --shadow: 0 0 4px 1px rgba(225, 225, 225, 0.75);
+}
+
 .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  padding: 0px 80px;
+  /* background: var(--blue); */
+}
+
+.note {
+  border: var(--border);
+  padding: 4px;
+  margin: 5px 0px;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.note p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.note:first-of-type {
+  margin-top: 0;
+}
+
+.notes {
+  /* max-width: 250px; */
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.inp-grp {
+  margin-bottom: 5px;
+  /* max-width: 250px; */
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+
+.inp-grp button, .actions button, .edit button {
+  cursor: pointer;
+  background: var(--blue);
   color: white;
+  border-radius: var(--radius);
+  border: none;
+  padding: 4px 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.inp-grp button {
+  box-shadow: var(--shadow);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.inp-grp input {
+  margin-right: 5px;
+  width: 100%;
+  padding: 7px 8px;
+  font-size: 13px;
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.actions button:first-of-type, .edit-div button:first-of-type {
+  margin-right: 5px;
+}
+
+.inp-div {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info input {
+  margin-right: 3px;
+}
+
+.dashed {
+  text-decoration: line-through;
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 375px) {
+  h1 {
+    font-size: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h3 {
+    font-size: 15px;
   }
+
+  .App {
+    margin: 0 auto;
+    padding: 0px 20px;
+  }
+}
+
+.edit {
+  background: white;
+  border-radius: var(--radius);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.edit input {
+  /* width: 100%; */
+  font-size: 13px;
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 4px;
+}
+
+h3 {
+  margin: 10px 0px;
+}
+
+.edit-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.edit-div button {
+  width: 100%;
 }
