@@ -49,7 +49,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('notes', JSON.stringify(notes))
-  }, [add, notes, save, toggle, del, edit])
+  }, [notes])
 
   return (
     <div className="App">
